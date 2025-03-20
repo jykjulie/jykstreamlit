@@ -23,19 +23,18 @@ def main():
         st.session_state["latest_text"] = load_latest_text()
 
     # 입력 필드
-    text = st.text_area("", st.session_state["latest_text"], height=100)
+    text = st.text_area("", value=st.session_state["latest_text"], height=100)
 
     # 저장 버튼
     if st.button("저장"):
         if text.strip():  # 빈 값 방지
             st.session_state["latest_text"] = text  # 세션 상태 업데이트
             save_latest_text(text)  # 파일 저장
-
-            # 텍스트 입력창 초기화
-            st.session_state["latest_text"] = ""  # 저장 후 텍스트 입력창 비우기
+            st.session_state["latest_text"] = ""  # 저장 후 입력창 초기화
 
     # 최신 저장된 텍스트 표시
-    st.write(st.session_state["latest_text"])
+    if st.session_state["latest_text"]:
+        st.write(st.session_state["latest_text"])
 
 if __name__ == "__main__":
     main()
