@@ -30,10 +30,11 @@ def main():
         if text.strip():  # 빈 값 방지
             st.session_state["latest_text"] = text  # 세션 상태 업데이트
             save_latest_text(text)  # 파일 저장
-            st.experimental_rerun()  # 새로고침하여 바로 반영
+            st.session_state["is_saved"] = True  # 저장 완료 플래그
 
     # 최신 저장된 텍스트 표시
-    st.write(st.session_state["latest_text"])
+    if "is_saved" in st.session_state and st.session_state["is_saved"]:
+        st.write(st.session_state["latest_text"])
 
 if __name__ == "__main__":
     main()
