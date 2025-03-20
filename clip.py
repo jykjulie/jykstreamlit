@@ -21,7 +21,6 @@ def save_latest_text(text):
 ##### 메인 앱 #####
 def main():
     
-
     # 세션 상태 초기화 (최초 1회)
     if "latest_text" not in st.session_state:
         st.session_state["latest_text"] = load_latest_text()
@@ -38,7 +37,7 @@ def main():
 
     # 최신 저장된 텍스트 표시
     if st.session_state["latest_text"]:
-        st.subheader("📌 최신 저장된 텍스트")
+        
         st.write(st.session_state["latest_text"])
 
 if __name__ == "__main__":
