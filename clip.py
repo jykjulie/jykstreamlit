@@ -31,9 +31,6 @@ def main():
             st.session_state["latest_text"] = text  # 세션 상태 업데이트
             save_latest_text(text)  # 파일 저장
 
-            # 텍스트 입력창 초기화
-            st.session_state["latest_text"] = ""  # 저장 후 텍스트 입력창 비우기
-
     # 최신 저장된 텍스트 표시
     st.write(st.session_state["latest_text"])
 
