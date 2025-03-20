@@ -11,7 +11,7 @@ def load_latest_text():
         with open(DATA_FILE, "r") as file:
             data = json.load(file)
             return data.get("text", "")
-    return ""
+    return ""  # 데이터가 없으면 빈 문자열 반환
 
 # 최신 텍스트 저장
 def save_latest_text(text):
