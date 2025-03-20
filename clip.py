@@ -20,7 +20,7 @@ def save_latest_text(text):
 
 ##### 메인 앱 #####
 def main():
-    #st.set_page_config(page_title="텍스트 저장", layout="centered")
+    
 
     # 세션 상태 초기화 (최초 1회)
     if "latest_text" not in st.session_state:
